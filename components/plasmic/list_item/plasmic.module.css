@@ -81,6 +81,8 @@
   --plasmic-token-list-item-icon-disabled-color: var(--token-pLxA2L1F3iwC);
   --token-llmgt3zj4B68: var(--token-PG8WAxTqPz54);
   --plasmic-token-list-item-icon-on-color: var(--token-llmgt3zj4B68);
+  --token-GO1UTCayvGBp: var(--token-7Q6Tq4DaBVj1);
+  --plasmic-token-list-group-gap-md: var(--token-GO1UTCayvGBp);
 }
 
 .plasmic_tokens {

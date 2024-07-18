@@ -47,7 +47,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "dNqcW7FYVqnkjtbdVGjyS8",
@@ -75,7 +76,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "rs6Egi3bpxgrd3P2FjjZpt",
@@ -103,7 +105,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "ivrmEdvdUKbShkHq3Wnmy4",
@@ -234,7 +237,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "4JFyEcvXaxQ6TZ3SJQYzp6",
@@ -288,7 +292,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "6PoNur73nfoJqbzNtkNpAX",
@@ -330,7 +335,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "wjwfXMtbnYisAPU4bK5cC5",
@@ -378,7 +384,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "bEVQSMSYHutfoPgsCgDaki",
@@ -400,19 +407,6 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "checkbox"
-        },
-        {
-          "id": "UAdHLLeNvvRK",
-          "name": "Label",
-          "type": "managed",
-          "projectId": "bEVQSMSYHutfoPgsCgDaki",
-          "renderModuleFilePath": "plasmic/checkbox/PlasmicLabel.tsx",
-          "importSpec": {
-            "modulePath": "Label.tsx"
-          },
-          "cssFilePath": "plasmic/checkbox/PlasmicLabel.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         }
       ],
       "icons": [
@@ -618,7 +612,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "d4FLWyib3U2TEbmJ38D5i3",
@@ -660,7 +655,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "teUZ7d8BEHskoXuvEf1pBj",
@@ -714,7 +710,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "fKizj5juSSuZK31zh3BBJE",
@@ -733,6 +730,19 @@
             "modulePath": "ListItem.tsx"
           },
           "cssFilePath": "plasmic/list_item/PlasmicListItem.module.css",
+          "scheme": "blackbox",
+          "componentType": "component"
+        },
+        {
+          "id": "33a-sFH_XWlm",
+          "name": "ListGroup",
+          "type": "managed",
+          "projectId": "fKizj5juSSuZK31zh3BBJE",
+          "renderModuleFilePath": "plasmic/list_item/PlasmicListGroup.tsx",
+          "importSpec": {
+            "modulePath": "ListGroup.tsx"
+          },
+          "cssFilePath": "plasmic/list_item/PlasmicListGroup.module.css",
           "scheme": "blackbox",
           "componentType": "component"
         }
@@ -816,7 +826,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "mGt6E9beS9xM1LmsApto9L",
@@ -858,7 +869,8 @@
           "componentImportPath": "@plasmicapp/react-web/lib/data-sources"
         }
       ],
-      "customFunctions": []
+      "customFunctions": [],
+      "jsBundleThemes": []
     },
     {
       "projectId": "i4n9AbVD4xq7VvHzvrVDh9",
@@ -880,19 +892,6 @@
           "scheme": "blackbox",
           "componentType": "component",
           "plumeType": "switch"
-        },
-        {
-          "id": "B_uVxgQINea0",
-          "name": "Label",
-          "type": "managed",
-          "projectId": "i4n9AbVD4xq7VvHzvrVDh9",
-          "renderModuleFilePath": "plasmic/switch/PlasmicLabel.tsx",
-          "importSpec": {
-            "modulePath": "Label.tsx"
-          },
-          "cssFilePath": "plasmic/switch/PlasmicLabel.module.css",
-          "scheme": "blackbox",
-          "componentType": "component"
         }
       ],
       "icons": [],

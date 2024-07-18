@@ -5921,6 +5921,16 @@
       }
     },
     {
+      "name": "list-group.gap.md",
+      "type": "spacing",
+      "value": "8px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "fKizj5juSSuZK31zh3BBJE",
+        "id": "GO1UTCayvGBp"
+      }
+    },
+    {
       "name": "list-group.gap.sm",
       "type": "spacing",
       "value": "4px",
@@ -11721,6 +11731,46 @@
       }
     },
     {
+      "name": "theme.default.color.normal",
+      "type": "color",
+      "value": "#1C2B36",
+      "category": "color",
+      "meta": {
+        "projectId": "i4n9AbVD4xq7VvHzvrVDh9",
+        "id": "6kftBeoLtxbY"
+      }
+    },
+    {
+      "name": "theme.default.font-size.normal",
+      "type": "fontsize",
+      "value": "1rem",
+      "category": "fontsize",
+      "meta": {
+        "projectId": "i4n9AbVD4xq7VvHzvrVDh9",
+        "id": "bdZ0vQ9Fxasa"
+      }
+    },
+    {
+      "name": "theme.default.font.family.body.sans",
+      "type": "fontfamily",
+      "value": "Source Sans Pro",
+      "category": "fontfamily",
+      "meta": {
+        "projectId": "i4n9AbVD4xq7VvHzvrVDh9",
+        "id": "1WslcVS8JN-B"
+      }
+    },
+    {
+      "name": "theme.default.line-height.normal",
+      "type": "lineheight",
+      "value": "1.5rem",
+      "category": "lineheight",
+      "meta": {
+        "projectId": "i4n9AbVD4xq7VvHzvrVDh9",
+        "id": "jOSi9e2T0IRy"
+      }
+    },
+    {
       "name": "theme.icon.interaction.default.brand.primary-color",
       "type": "color",
       "value": "#08548A",
@@ -11788,6 +11838,16 @@
       "meta": {
         "projectId": "c5U1YmQuuwKiEiPAPcSEb",
         "id": "FEe2H2xf-m39"
+      }
+    },
+    {
+      "name": "theme.padding.md",
+      "type": "spacing",
+      "value": "8px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "i4n9AbVD4xq7VvHzvrVDh9",
+        "id": "CSvRO2lSLnVD"
       }
     },
     {

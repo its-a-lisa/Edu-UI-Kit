@@ -137,10 +137,6 @@
 .root .labelContainer___focusVisibleWithin {
   outline: none;
 }
-.label:global(.__wab_instance) {
-  max-width: 100%;
-  position: relative;
-}
 .slotTargetChildren {
   white-space: pre;
   color: var(--token-d__FDKjeQ83e);

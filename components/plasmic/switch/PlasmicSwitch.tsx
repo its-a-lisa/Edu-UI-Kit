@@ -60,7 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import * as pp from "@plasmicapp/react-web";
-import Label from "../../Label"; // plasmic-import: B_uVxgQINea0/component
 
 import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
@@ -81,6 +80,7 @@ export type PlasmicSwitch__VariantMembers = {
   isChecked: "isChecked";
   label: "bottom" | "top" | "reversed";
   size: "sm" | "md" | "lg";
+  diffLook: "unnamedVariant";
 };
 export type PlasmicSwitch__VariantsArgs = {
   noLabel?: SingleBooleanChoiceArg<"noLabel">;
@@ -88,6 +88,7 @@ export type PlasmicSwitch__VariantsArgs = {
   isChecked?: SingleBooleanChoiceArg<"isChecked">;
   label?: SingleChoiceArg<"bottom" | "top" | "reversed">;
   size?: SingleChoiceArg<"sm" | "md" | "lg">;
+  diffLook?: SingleChoiceArg<"unnamedVariant">;
 };
 type VariantPropType = keyof PlasmicSwitch__VariantsArgs;
 export const PlasmicSwitch__VariantProps = new Array<VariantPropType>(
@@ -95,7 +96,8 @@ export const PlasmicSwitch__VariantProps = new Array<VariantPropType>(
   "isDisabled",
   "isChecked",
   "label",
-  "size"
+  "size",
+  "diffLook"
 );
 
 export type PlasmicSwitch__ArgsType = {
@@ -121,8 +123,10 @@ export type PlasmicSwitch__OverridesType = {
   _switch?: Flex__<"div">;
   track?: Flex__<"div">;
   handle?: Flex__<"div">;
+  track2?: Flex__<"div">;
+  option?: Flex__<"div">;
+  option2?: Flex__<"div">;
   labelContainer?: Flex__<"div">;
-  label?: Flex__<typeof Label>;
 };
 
 export interface DefaultSwitchProps extends pp.SwitchProps {
@@ -131,6 +135,7 @@ export interface DefaultSwitchProps extends pp.SwitchProps {
   onChange?: (isChecked: boolean) => void;
   label?: SingleChoiceArg<"bottom" | "top" | "reversed">;
   size?: SingleChoiceArg<"sm" | "md" | "lg">;
+  diffLook?: SingleChoiceArg<"unnamedVariant">;
 }
 
 const $$ = {};
@@ -195,6 +200,12 @@ function PlasmicSwitch__RenderFunc(props: {
         type: "private",
         variableType: "variant",
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.size
+      },
+      {
+        path: "diffLook",
+        type: "private",
+        variableType: "variant",
+        initFunc: ({ $props, $state, $queries, $ctx }) => $props.diffLook
       }
     ],
     [$props, $ctx, $refs]
@@ -265,6 +276,11 @@ function PlasmicSwitch__RenderFunc(props: {
         data-plasmic-override={overrides._switch}
         className={classNames(projectcss.all, sty._switch, {
           [sty._switch___focusVisibleWithin]: triggers.focusVisibleWithin_root,
+          [sty._switchdiffLook_unnamedVariant]: hasVariant(
+            $state,
+            "diffLook",
+            "unnamedVariant"
+          ),
           [sty._switchisChecked]: hasVariant($state, "isChecked", "isChecked"),
           [sty._switchisDisabled]: hasVariant(
             $state,
@@ -282,6 +298,11 @@ function PlasmicSwitch__RenderFunc(props: {
           data-plasmic-override={overrides.track}
           className={classNames(projectcss.all, sty.track, {
             [sty.track___focusVisibleWithin]: triggers.focusVisibleWithin_root,
+            [sty.trackdiffLook_unnamedVariant]: hasVariant(
+              $state,
+              "diffLook",
+              "unnamedVariant"
+            ),
             [sty.trackglobal_mode_dark]: hasVariant(
               globalVariants,
               "mode",
@@ -318,6 +339,50 @@ function PlasmicSwitch__RenderFunc(props: {
             })}
           />
         </div>
+        {(hasVariant($state, "diffLook", "unnamedVariant") ? true : false) ? (
+          <div
+            data-plasmic-name={"track2"}
+            data-plasmic-override={overrides.track2}
+            className={classNames(projectcss.all, sty.track2, {
+              [sty.track2diffLook_unnamedVariant]: hasVariant(
+                $state,
+                "diffLook",
+                "unnamedVariant"
+              )
+            })}
+          >
+            <div
+              data-plasmic-name={"option"}
+              data-plasmic-override={overrides.option}
+              className={classNames(projectcss.all, sty.option)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dSxKa
+                )}
+              >
+                {"Email"}
+              </div>
+            </div>
+            <div
+              data-plasmic-name={"option2"}
+              data-plasmic-override={overrides.option2}
+              className={classNames(projectcss.all, sty.option2)}
+            >
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__bhvHe
+                )}
+              >
+                {"Phone"}
+              </div>
+            </div>
+          </div>
+        ) : null}
       </div>
       {(hasVariant($state, "noLabel", "noLabel") ? false : true) ? (
         <div
@@ -344,45 +409,35 @@ function PlasmicSwitch__RenderFunc(props: {
             )
           })}
         >
-          <Label
-            data-plasmic-name={"label"}
-            data-plasmic-override={overrides.label}
-            className={classNames("__wab_instance", sty.label)}
-          >
-            {renderPlasmicSlot({
-              defaultContents: "Switch me",
-              value: args.children,
-              className: classNames(sty.slotTargetChildren, {
-                [sty.slotTargetChildren___focusVisibleWithin]:
-                  triggers.focusVisibleWithin_root,
-                [sty.slotTargetChildrenglobal_mode_dark]: hasVariant(
-                  globalVariants,
-                  "mode",
-                  "dark"
-                ),
-                [sty.slotTargetChildrenisChecked]: hasVariant(
-                  $state,
-                  "isChecked",
-                  "isChecked"
-                ),
-                [sty.slotTargetChildrenlabel_reversed]: hasVariant(
-                  $state,
-                  "label",
-                  "reversed"
-                ),
-                [sty.slotTargetChildrennoLabel]: hasVariant(
-                  $state,
-                  "noLabel",
-                  "noLabel"
-                ),
-                [sty.slotTargetChildrensize_sm]: hasVariant(
-                  $state,
-                  "size",
-                  "sm"
-                )
-              })
-            })}
-          </Label>
+          {renderPlasmicSlot({
+            defaultContents: "Switch me",
+            value: args.children,
+            className: classNames(sty.slotTargetChildren, {
+              [sty.slotTargetChildren___focusVisibleWithin]:
+                triggers.focusVisibleWithin_root,
+              [sty.slotTargetChildrenglobal_mode_dark]: hasVariant(
+                globalVariants,
+                "mode",
+                "dark"
+              ),
+              [sty.slotTargetChildrenisChecked]: hasVariant(
+                $state,
+                "isChecked",
+                "isChecked"
+              ),
+              [sty.slotTargetChildrenlabel_reversed]: hasVariant(
+                $state,
+                "label",
+                "reversed"
+              ),
+              [sty.slotTargetChildrennoLabel]: hasVariant(
+                $state,
+                "noLabel",
+                "noLabel"
+              ),
+              [sty.slotTargetChildrensize_sm]: hasVariant($state, "size", "sm")
+            })
+          })}
         </div>
       ) : null}
     </Stack__>
@@ -412,12 +467,23 @@ function useBehavior<P extends pp.SwitchProps>(props: P, ref: pp.SwitchRef) {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "_switch", "track", "handle", "labelContainer", "label"],
-  _switch: ["_switch", "track", "handle"],
+  root: [
+    "root",
+    "_switch",
+    "track",
+    "handle",
+    "track2",
+    "option",
+    "option2",
+    "labelContainer"
+  ],
+  _switch: ["_switch", "track", "handle", "track2", "option", "option2"],
   track: ["track", "handle"],
   handle: ["handle"],
-  labelContainer: ["labelContainer", "label"],
-  label: ["label"]
+  track2: ["track2", "option", "option2"],
+  option: ["option"],
+  option2: ["option2"],
+  labelContainer: ["labelContainer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -427,8 +493,10 @@ type NodeDefaultElementType = {
   _switch: "div";
   track: "div";
   handle: "div";
+  track2: "div";
+  option: "div";
+  option2: "div";
   labelContainer: "div";
-  label: typeof Label;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -494,8 +562,10 @@ export const PlasmicSwitch = Object.assign(
     _switch: makeNodeComponent("_switch"),
     track: makeNodeComponent("track"),
     handle: makeNodeComponent("handle"),
+    track2: makeNodeComponent("track2"),
+    option: makeNodeComponent("option"),
+    option2: makeNodeComponent("option2"),
     labelContainer: makeNodeComponent("labelContainer"),
-    label: makeNodeComponent("label"),
 
     // Metadata about props expected for PlasmicSwitch
     internalVariantProps: PlasmicSwitch__VariantProps,

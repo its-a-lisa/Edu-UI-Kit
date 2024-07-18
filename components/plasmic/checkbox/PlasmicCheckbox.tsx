@@ -60,7 +60,6 @@ import {
 } from "@plasmicapp/react-web/lib/host";
 
 import * as pp from "@plasmicapp/react-web";
-import Label from "../../Label"; // plasmic-import: UAdHLLeNvvRK/component
 
 import { ModeValue, useMode } from "../core/PlasmicGlobalVariant__Mode"; // plasmic-import: yBTVTgAz2Co9/globalVariant
 import { useScreenVariants as useScreenVariantsohEUf6Jd0EV8 } from "../core/PlasmicGlobalVariant__Screen"; // plasmic-import: OhEUf6Jd0eV8/globalVariant
@@ -127,7 +126,6 @@ export type PlasmicCheckbox__OverridesType = {
   freeBox?: Flex__<"div">;
   svg?: Flex__<"svg">;
   labelContainer?: Flex__<"div">;
-  label?: Flex__<typeof Label>;
 };
 
 export interface DefaultCheckboxProps extends pp.CheckboxProps {
@@ -333,46 +331,36 @@ function PlasmicCheckbox__RenderFunc(props: {
             )
           })}
         >
-          <Label
-            data-plasmic-name={"label"}
-            data-plasmic-override={overrides.label}
-            className={classNames("__wab_instance", sty.label)}
-          >
-            {renderPlasmicSlot({
-              defaultContents: "Label",
-              value: args.children,
-              className: classNames(sty.slotTargetChildren, {
-                [sty.slotTargetChildren___focusVisibleWithin]:
-                  triggers.focusVisibleWithin_root,
-                [sty.slotTargetChildrenisChecked]: hasVariant(
-                  $state,
-                  "isChecked",
-                  "isChecked"
-                ),
-                [sty.slotTargetChildrenisDisabled]: hasVariant(
-                  $state,
-                  "isDisabled",
-                  "isDisabled"
-                ),
-                [sty.slotTargetChildrenisIndeterminate]: hasVariant(
-                  $state,
-                  "isIndeterminate",
-                  "isIndeterminate"
-                ),
-                [sty.slotTargetChildrennoLabel]: hasVariant(
-                  $state,
-                  "noLabel",
-                  "noLabel"
-                ),
-                [sty.slotTargetChildrensize_lg]: hasVariant(
-                  $state,
-                  "size",
-                  "lg"
-                ),
-                [sty.slotTargetChildrensize_s]: hasVariant($state, "size", "s")
-              })
-            })}
-          </Label>
+          {renderPlasmicSlot({
+            defaultContents: "Label",
+            value: args.children,
+            className: classNames(sty.slotTargetChildren, {
+              [sty.slotTargetChildren___focusVisibleWithin]:
+                triggers.focusVisibleWithin_root,
+              [sty.slotTargetChildrenisChecked]: hasVariant(
+                $state,
+                "isChecked",
+                "isChecked"
+              ),
+              [sty.slotTargetChildrenisDisabled]: hasVariant(
+                $state,
+                "isDisabled",
+                "isDisabled"
+              ),
+              [sty.slotTargetChildrenisIndeterminate]: hasVariant(
+                $state,
+                "isIndeterminate",
+                "isIndeterminate"
+              ),
+              [sty.slotTargetChildrennoLabel]: hasVariant(
+                $state,
+                "noLabel",
+                "noLabel"
+              ),
+              [sty.slotTargetChildrensize_lg]: hasVariant($state, "size", "lg"),
+              [sty.slotTargetChildrensize_s]: hasVariant($state, "size", "s")
+            })
+          })}
         </div>
       ) : null}
     </Stack__>
@@ -409,11 +397,10 @@ function useBehavior<P extends pp.CheckboxProps>(
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "svg", "labelContainer", "label"],
+  root: ["root", "freeBox", "svg", "labelContainer"],
   freeBox: ["freeBox", "svg"],
   svg: ["svg"],
-  labelContainer: ["labelContainer", "label"],
-  label: ["label"]
+  labelContainer: ["labelContainer"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -423,7 +410,6 @@ type NodeDefaultElementType = {
   freeBox: "div";
   svg: "svg";
   labelContainer: "div";
-  label: typeof Label;
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -489,7 +475,6 @@ export const PlasmicCheckbox = Object.assign(
     freeBox: makeNodeComponent("freeBox"),
     svg: makeNodeComponent("svg"),
     labelContainer: makeNodeComponent("labelContainer"),
-    label: makeNodeComponent("label"),
 
     // Metadata about props expected for PlasmicCheckbox
     internalVariantProps: PlasmicCheckbox__VariantProps,
